@@ -49,9 +49,11 @@ public class FloatingPointEvaluator {
 				// Attempt to convert the input to a double and add it to the array. If it fails, check if it is a quit command or inform the user of invalid input.
 				double userNum = Double.parseDouble(userInput);
 				
+				// If the value is negative, inform the user and get a new value.
 				if (userNum < 0) {
 					throw new NegativeNumberException();
 				}
+				
 				userValues.add(userNum);
 				total = total + userNum;
 			} catch (NoSuchElementException e) {
@@ -87,5 +89,4 @@ public class FloatingPointEvaluator {
 		// Close the scanner.
 		scnr.close();
 	}
-
 }
